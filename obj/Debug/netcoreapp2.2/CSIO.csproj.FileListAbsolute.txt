@@ -1,0 +1,11 @@
+E:\www\CSIO\bin\Debug\netcoreapp2.2\CSIO.deps.json
+E:\www\CSIO\bin\Debug\netcoreapp2.2\CSIO.runtimeconfig.json
+E:\www\CSIO\bin\Debug\netcoreapp2.2\CSIO.runtimeconfig.dev.json
+E:\www\CSIO\bin\Debug\netcoreapp2.2\CSIO.dll
+E:\www\CSIO\bin\Debug\netcoreapp2.2\CSIO.pdb
+E:\www\CSIO\obj\Debug\netcoreapp2.2\CSIO.csprojAssemblyReference.cache
+E:\www\CSIO\obj\Debug\netcoreapp2.2\CSIO.csproj.CoreCompileInputs.cache
+E:\www\CSIO\obj\Debug\netcoreapp2.2\CSIO.AssemblyInfoInputs.cache
+E:\www\CSIO\obj\Debug\netcoreapp2.2\CSIO.AssemblyInfo.cs
+E:\www\CSIO\obj\Debug\netcoreapp2.2\CSIO.dll
+E:\www\CSIO\obj\Debug\netcoreapp2.2\CSIO.pdb
