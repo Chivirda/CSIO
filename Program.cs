@@ -11,40 +11,56 @@ namespace CSIO
         {
             var first = "first.txt";
             var second = "second.txt";
+            System.Console.Write("Enter length of files: ");
+            var lengthOfFile = int.Parse(Console.ReadLine());
 
-            using (var sw = new StreamWriter(first, false, Encoding.UTF8))
-            {
-                var rand = new Random();
-                for(int i = 0; i < 6; i++)
-                {
-                    sw.WriteLine(rand.Next(1, 50));
-                }
-            }
-
-            using (var sw = new StreamWriter(second, false, Encoding.UTF8))
-            {
-                var rand = new Random();
-                for(int i = 0; i < 6; i++)
-                {
-                    sw.WriteLine(rand.Next(50, 100));
-                }
-            }
-
+            #region Создание файлов
+            createFiles(first, lengthOfFile, 1, 50);
+            createFiles(second, lengthOfFile, 50, 100);
             System.Console.WriteLine("Записано!");
+            #endregion
 
-            var firstNums = new List<int>();
+            #region Сортировка и запись файлов
+            sortFiles(first);
+            sortFiles(second);
+            System.Console.WriteLine("Отсортировано!");
+            #endregion
+        }
 
-            using (var sr = new StreamReader(first, Encoding.UTF8))
+        static void sortFiles(string nameOfFile)
+        {
+            var nums = new List<int>();
+
+            using (var sr = new StreamReader(nameOfFile, Encoding.UTF8))
             {
                 while(!sr.EndOfStream)
                 {
-                    firstNums.Add(int.Parse(sr.ReadLine()));
+                    nums.Add(int.Parse(sr.ReadLine()));
                 }
             }
 
-            firstNums.Sort();
+            nums.Sort();
 
-            
+            using (var sw = new StreamWriter(nameOfFile, false, Encoding.UTF8))
+            {
+                for(int i = 0; i < nums.Count; i++)
+                {
+                    sw.WriteLine(nums[i]);
+                }
+            }
+
+        }
+
+        static void createFiles(string nameOfFile, int lengthOfFile, int min, int max)
+        {
+            using (var sw = new StreamWriter(nameOfFile, false, Encoding.UTF8))
+            {
+                var rand = new Random();
+                for(int i = 0; i < lengthOfFile; i++)
+                {
+                    sw.WriteLine(rand.Next(min, max));
+                }
+            }
         }
     }
 }
