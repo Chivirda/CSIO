@@ -45,7 +45,7 @@ namespace CSIO
                 }
             }
 
-            nums.Sort();
+            Sort.bubbleSort(nums);
 
             using (var sw = new StreamWriter(nameOfFile, false, Encoding.UTF8))
             {
@@ -79,7 +79,7 @@ namespace CSIO
             resultList.AddRange(firstList);
             resultList.AddRange(secondList);
 
-            bubbleSort(resultList);
+            Sort.bubbleSort(resultList);
 
             using (var sw = new StreamWriter(resultFile, false, Encoding.UTF8))
             {
@@ -103,24 +103,6 @@ namespace CSIO
             }
 
             return numList;
-        }
-
-        static List<int> bubbleSort(List<int> list)
-        {
-            int temp;
-            for(int i = 0; i < list.Count; i++)
-            {
-                for(int j = i + 1; j < list.Count; j++)
-                {
-                    if(list[i] > list[j])
-                    {
-                        temp = list[i];
-                        list[i] = list[j];
-                        list[j] = temp;
-                    }
-                }
-            }
-            return list;
         }
     }
 }
